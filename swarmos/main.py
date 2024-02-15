@@ -9,6 +9,10 @@ from swarms import Agent, ChromaDB, OpenAIChat, tool
 load_dotenv()
 
 
+# Memory
+memory = ChromaDB()
+
+
 # Define a tool
 @tool
 def search_api(query: str, description: str):
@@ -24,19 +28,9 @@ def search_api(query: str, description: str):
 
 
 @tool
-def weather_api(
+def terminal_api(
     query: str,
 ):
-    """_summary_
-
-    Args:
-        query (str): _description_
-    """
-    print(f"Getting the weather for {query}")
-
-
-@tool
-def rapid_api(query: str):
     """_summary_
 
     Args:
@@ -64,7 +58,7 @@ agent = Agent(
     llm=llm,
     max_loops="auto",
     dashboard=True,
-    tools=[search_api, weather_api, rapid_api],
+    tools=[search_api, terminal_api],
     long_term_memory=ChromaDB(),
 )
 

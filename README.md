@@ -9,8 +9,8 @@ An all-new OS that orchestrates autonomous agents as workers to execute tasks. I
 ## install
 `$ pip install swarmos`
 
-# LLM
-- GPT-4-V
+## I//0
+- Speech -> text + GPT-4-V 
 
 ## Tools
 - Calculator
